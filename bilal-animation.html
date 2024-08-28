@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0"
+        >
+        <script src="https://cdn.tailwindcss.com"></script>
+        <script
+            defer
+            src="https://unpkg.com/alpinejs"
+        ></script>
+        <title>Document</title>
+    </head>
+
+    <body>
+        <div
+            x-data="{
+            p1:true,
+            p2:true
+            }"
+            class="flex justify-center items-center gap-6 h-screen"
+        >
+            <div class="space-y-4">
+                <img
+                    class="rounded-2xl"
+                    x-show="p1"
+                    x-transition:enter="transition ease-out duration-1000"
+                    x-transition:enter-start="opacity-0 transform scale-50"
+                    x-transition:enter-end="opacity-100 transform scale-100"
+                    x-transition:leave="transition ease-out duration-1000"
+                    x-transition:leave-start="opacity-100 transform scale-100"
+                    x-transition:leave-end="opacity-0 transform scale-50"
+                    src="https://picsum.photos/301"
+                    alt=""
+                >
+                <h1
+                    @click="p1 = !p1"
+                    class="bg-pink-500 hover:bg-emerald-500 mx-auto px-4 py-2 rounded-xl w-fit font-bold text-3xl text-white transform hover:-translate-y-4 duration-1000 hover:scale-150 hover:rotate-[359deg]"
+                >
+                    tailwind</h1>
+            </div>
+            <div class="space-y-4">
+                <img
+                    class="rounded-2xl"
+                    x-show="p2"
+                    x-transition:enter.duration.1000ms
+                    x-transition:enter-start.scale.50.duration.500ms
+                    x-transition:enter-end.scale.100.duration.500ms
+                    x-transition:leave.duration.1000ms
+                    x-transition:leave-start.scale.100.duration.500ms
+                    x-transition:leave-end.scale.50.duration.500ms
+                    src="https://picsum.photos/300"
+                    alt=""
+                >
+                <h1
+                    @click="p2 = !p2"
+                    class="bg-cyan-500 hover:bg-yellow-500 mx-auto px-4 py-2 rounded-xl w-fit font-bold text-3xl text-white transform hover:-translate-y-4 duration-1000 hover:scale-150 hover:rotate-[359deg]"
+                >
+                    alpine</h1>
+            </div>
+        </div>
+    </body>
+
+</html>
